@@ -121,6 +121,17 @@
         margin-bottom: 5px;
         line-height: 1.5;
     }
+    .image-container {
+    width: 100%; /* 父div宽度 */
+    height: 400px; /* 父div高度，可根据需要调整 */
+    overflow: hidden; /* 防止图片超出父div */
+}
+
+.image-container img {
+    width: 100%; /* 图片宽度适应父div */
+    height: 100%; /* 图片高度适应父div */
+    object-fit: cover; /* 确保图片填充整个父div，可能会裁剪部分图片 */
+}
     </style>
 </head>
 <body>
@@ -140,7 +151,14 @@
 
     <div class="section">
         <div class="section-title">教育背景</div>
-        
+                <div class="subsection">
+            <div class="subsection-title">电子科技大学 生物医学工程 硕士</div>
+            <div class="date">2024.09 - 至今</div>
+            <ul>
+                <li>专业成绩：GPA 3.83/4（专业前5%）</li>
+                <li>主修课程：生物医学材料前沿进展、实验技术、硕士研究生学位英语、矩阵理论、认知神经科学、神经信息学基础、统计推断方法、医学影像学进展、脑机接口技术</li>
+            </ul>
+        </div>
         <div class="subsection">
             <div class="subsection-title">西南科技大学 生物医学工程 本科</div>
             <div class="date">2020.09 - 2024.06</div>
@@ -151,16 +169,23 @@
             </ul>
         </div>
         
+
+    </div>
+<div class="section">
+        <div class="section-title">实习经历</div>
+        
         <div class="subsection">
-            <div class="subsection-title">电子科技大学 生物医学工程 硕士</div>
-            <div class="date">2024.09 - 至今</div>
+            <div class="subsection-title">实习单位：国网宁夏电力有限公司</div>
+            <div class="date">2023.10.10~2023.11.10</div>
+            <div>技术栈： 无人机、斗臂车、YOLO、OpenPose、Python</div>
             <ul>
-                <li>专业成绩：GPA 3.83/4（专业前5%）</li>
-                <li>主修课程：生物医学材料前沿进展、实验技术、硕士研究生学位英语、矩阵理论、认知神经科学、神经信息学基础、统计推断方法、医学影像学进展、脑机接口技术</li>
+                <li>实习内容：学习配电网不停电作业流程：了解操作规范和安全要点；机器视觉与人工智能应用：掌握其在作业行为管控中的技术原理；数据收集与分析：协助采集和处理图像、视频数据，为算法开发提供支持；操作斗臂车与无人机：完成模拟作业，采集作业数据
+                    算法调研与实现：调研并实现头盔检测、人体姿势估计等算法；危险姿势分析：开发算法识别作业中的危险姿势，提供安全预警。
+                </li>
+                <li>项目职责：采集数据、模拟作业、调研算法并实现；</li>
             </ul>
         </div>
-    </div>
-
+</div>
     <div class="section">
         <div class="section-title">项目经验</div>
         
@@ -239,12 +264,15 @@
         </ul>
     </div>
 
-    <div class="section">
-        <div class="section-title">娱乐生活</div>
-        <ul>
-            <li>健身vlog博主，抖音粉丝5000+，获赞10w+(抖音名：京|自律版)</li>
-            <li>佳能男摄，接客超过100+，指导动作，提供情绪价值，专业级修图</li>
-        </ul>
+<div class="section">
+    <div class="section-title">娱乐生活</div>
+    <ul>
+        <li>健身vlog博主，抖音粉丝5000+，获赞10w+(抖音名：京|自律版)</li>
+        <li>佳能男摄，接客超过100+，指导动作，提供情绪价值，专业级修图</li>
+    </ul>
+    <div class="image-container">
+        <img src="https://img.picui.cn/free/2025/07/06/686a445fc70aa.jpg" alt="我的帅照" title="我的帅照.jpg" />
     </div>
+</div>
 </body>
 </html>
