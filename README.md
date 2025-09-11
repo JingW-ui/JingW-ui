@@ -42,6 +42,7 @@
 | **C 语言在线考试系统** | `Spring Boot` `Vue` `MySQL` | 校级项目，已上线教学使用 | 后端主程 |
 
 &gt; 更多代码 & 模型已开源至 ➡️ [github.com/junior6666](https://github.com/junior6666)
+&gt;个人简历详情 ➡️ [个人简历](https://junior6666.github.io/junior6666/)
 
 ---
 
