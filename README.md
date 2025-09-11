@@ -5,10 +5,14 @@
 📱 177-0237-6984｜📮 2642144249@qq.com  
 ---
 
-## 🎯 GitHub 数据
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=junior6666&show_icons=true&theme=radical&hide_border=true)  
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=junior6666&layout=compact&theme=radical&hide_border=true)
-
+## 🎯 GitHub 全景
+<p align="center">
+  <img height="165" src="https://github-readme-stats.vercel.app/api?username=junior6666&show_icons=true&include_all_commits=true&hide_border=true&theme=radical" alt="Stats" />
+  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=junior6666&layout=compact&hide_border=true&theme=radical" alt="Top Langs" />
+</p>
+<p align="center">
+  <img src="https://streak-stats.demolab.com/?user=junior6666&theme=radical&hide_border=true" alt="Streak" />
+</p>
 ---
 
 ## 🎓 教育背景
