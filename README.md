@@ -37,7 +37,7 @@
 | **脑部 MRI 海马自动分割** | `nnU-Net` `3D Slicer` | 全国一等奖 | 独立开发 |
 | **C 语言在线考试系统** | `Spring Boot` `Vue` `MySQL` | 校级项目，已上线教学使用 | 后端主程 |
 
-&gt; 更多代码 & 模型已开源至 ➡️ [github.com/your_github_id](https://github.com/junior6666)
+&gt; 更多代码 & 模型已开源至 ➡️ [github.com/junior6666](https://github.com/junior6666)
 
 ---
 
