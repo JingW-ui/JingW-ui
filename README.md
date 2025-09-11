@@ -5,15 +5,17 @@
 📱 177-0237-6984｜📮 2642144249@qq.com  
 ---
 
-## 🎯 GitHub 全景
-<p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=junior6666&show_icons=true&include_all_commits=true&hide_border=true&theme=radical" alt="Stats" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=junior6666&layout=compact&hide_border=true&theme=radical" alt="Top Langs" />
-</p>
-<p align="center">
-  <img src="https://streak-stats.demolab.com/?user=junior6666&theme=radical&hide_border=true" alt="Streak" />
-</p>
----
+## 🎯 本周代码脉搏
+![GitHub Streak](https://streak-stats.demolab.com/?user=junior6666&theme=radical&hide_border=true&fire=FF3860)
+
+<details>
+  <summary>📈 更多指标（点击展开）</summary>
+
+![Stats](https://github-readme-stats.vercel.app/api?username=junior6666&show_icons=true&theme=radical&hide_border=true&include_all_commits=true)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=junior6666&layout=compact&theme=radial&hide_border=true&langs_count=10)
+
+![Contributions Graph](https://github-contribution-stats.vercel.app/api/?username=junior6666&theme=radical&format=svg)
+</details>
 
 ## 🎓 教育背景
 | 时间 | 学校 | 专业 | 排名 |
