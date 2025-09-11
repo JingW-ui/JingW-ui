@@ -14,7 +14,7 @@
 ![Stats](https://github-readme-stats.vercel.app/api?username=junior6666&show_icons=true&theme=radical&hide_border=true&include_all_commits=true)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=junior6666&layout=compact&theme=radial&hide_border=true&langs_count=10)
 
-![Contributions Graph](https://github-contribution-stats.vercel.app/api/?username=junior6666&theme=radical&format=svg)
+![Contributions Graph](https://github-readme-stats-sigma-five.vercel.app/api/?username=junior6666&theme=radical&format=svg)
 </details>
 
 ## 🎓 教育背景
