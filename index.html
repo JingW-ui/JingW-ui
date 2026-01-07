@@ -6,132 +6,202 @@
     <title>王京的个人简历</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
             line-height: 1.6;
             color: #333;
             max-width: 900px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f9f9f9;
+            background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+            min-height: 100vh;
         }
         .header {
             text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #3498db;
+            margin-bottom: 40px;
+            padding: 30px 0 20px;
+            border-bottom: 2px solid #333;
+            background: white;
+            margin-left: -20px;
+            margin-right: -20px;
+            margin-top: -20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
         }
         .name {
-            font-size: 32px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #2c3e50;
+            font-size: 36px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
         }
         .contact-info {
-            font-size: 16px;
-            margin-bottom: 5px;
+            font-size: 13px;
+            margin-bottom: 4px;
+            color: #666;
+            letter-spacing: 0.5px;
         }
         .section {
-            margin-bottom: 30px;
+            margin-bottom: 24px;
             background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 24px;
+            border: 1px solid #e8e8e8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .section:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            border-color: #d0d0d0;
         }
         .section-title {
-            font-size: 22px;
-            font-weight: bold;
-            color: #3498db;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 18px;
+            border-left: 4px solid #333;
+            padding-left: 12px;
         }
         .subsection {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .subsection:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
         }
         .subsection-title {
-            font-size: 18px;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 6px;
         }
         .date {
-            font-style: italic;
-            color: #7f8c8d;
-            margin-bottom: 5px;
+            font-size: 11px;
+            color: #999;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
         }
         ul {
-            padding-left: 20px;
+            padding-left: 18px;
         }
         li {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
+            font-size: 13px;
+            color: #555;
+            line-height: 1.5;
         }
         .skills {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
         }
         .skill {
-            background-color: #e0f7fa;
-            padding: 5px 10px;
-            border-radius: 3px;
+            background: linear-gradient(135deg, #f5f5f5 0%, #f0f0f0 100%);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            border: 1px solid #e0e0e0;
+            color: #555;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .skill:hover {
+            background: linear-gradient(135deg, #333 0%, #555 100%);
+            color: white;
+            border-color: #333;
         }
         .divider {
-            height: 2px;
-            background-color: #3498db;
+            height: 1px;
+            background-color: #e0e0e0;
             margin: 30px 0;
-            opacity: 0.3;
+            opacity: 1;
         }
-            .header {
-        text-align: center;
-        margin-bottom: 30px;
-        padding-bottom: 20px;
-        border-bottom: 2px solid #3498db;
-    }
-    
-    .profile-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 30px;
-        flex-wrap: wrap;
-    }
-    
-    .avatar {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 3px solid #3498db;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    
-    .profile-info {
-        text-align: left;
-    }
-    
-    .name {
-        font-size: 32px;
-        font-weight: bold;
-        margin-bottom: 10px;
-        color: #2c3e50;
-    }
-    
-    .contact-info {
-        font-size: 16px;
-        margin-bottom: 5px;
-        line-height: 1.5;
-    }
-    .image-container {
-    width: 100%; /* 父div宽度 */
-    height: 400px; /* 父div高度，可根据需要调整 */
-    overflow: hidden; /* 防止图片超出父div */
-}
+        
+        .profile-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .profile-info {
+            text-align: left;
+        }
+        
+        .name {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #222;
+        }
+        
+        .contact-info {
+            font-size: 13px;
+            margin-bottom: 4px;
+            color: #666;
+            line-height: 1.5;
+        }
+        .image-container {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 3px;
+            margin-top: 15px;
+        }
 
-.image-container img {
-    width: 100%; /* 图片宽度适应父div */
-    height: 100%; /* 图片高度适应父div */
-    object-fit: cover; /* 确保图片填充整个父div，可能会裁剪部分图片 */
-}
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .nav-btn {
+            background: white;
+            border: 2px solid #333;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-btn:hover {
+            background: #f5f5f5;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .nav-btn:active {
+            transform: translateY(0);
+        }
+
+        .nav-btn.primary {
+            background: #333;
+            color: white;
+            border-color: #333;
+        }
+
+        .nav-btn.primary:hover {
+            background: #1a1a1a;
+            box-shadow: 0 4px 12px rgba(51,51,51,0.2);
+        }
     </style>
 </head>
 <body>
@@ -140,7 +210,7 @@
         <img src="https://i.cetsteam.com/imgs/2025/09/11/a34b0030e47cee03.jpg" alt="王京的头像" class="avatar">
         <div class="profile-info">
             <div class="name">王京</div>
-            <div class="contact-info">求职意向： 算法/软件/测试 | 成都 | 到岗时间：一周内</div>
+            <div class="contact-info">求职意向： 算法/软件/测试 | 成都 </div>
             <div class="contact-info">年龄： 24岁 | 性别： 男 | 籍贯： 重庆</div>
             <div class="contact-info">联系方式： 17702376984 | 2642144249@qq.com</div>
         </div>
@@ -156,7 +226,7 @@
             <div class="date">2024.09 - 至今</div>
             <ul>
                 <li>专业成绩：GPA 3.83/4（专业前5%）</li>
-                <li>主修课程：生物医学材料前沿进展、实验技术、硕士研究生学位英语、矩阵理论、认知神经科学、神经信息学基础、统计推断方法、医学影像学进展、脑机接口技术</li>
+                <li>主修课程：生物医学材料前沿进展、矩阵理论、认知神经科学、神经信息学基础、统计推断方法、医学影像学进展、脑机接口技术</li>
             </ul>
         </div>
         <div class="subsection">
@@ -265,8 +335,8 @@
     <div class="section">
         <div class="section-title">科研成果</div>
         <ul>
-            <li>专利已受理一项</li>
-            <li>软著两项</li>
+            <li>专利已受权一项</li>
+            <li>软著四项</li>
         </ul>
     </div>
 
@@ -276,8 +346,13 @@
         <li>健身vlog博主，抖音粉丝5000+，获赞10w+(抖音名：京|自律版)</li>
         <li>佳能男摄，接客超过100+，指导动作，提供情绪价值，专业级修图</li>
     </ul>
-    <div class="image-container">
-        <img src="" alt="我的照片" title="我的照片.jpg" />
+</div>
+
+<div class="section">
+    <div class="section-title">作品展示</div>
+    <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+        <a href="carousel.html" class="nav-btn">Image Gallery</a>
+        <a href="videos.html" class="nav-btn primary">Video Gallery</a>
     </div>
 </div>
 </body>
