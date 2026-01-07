@@ -6,7 +6,7 @@
 ---
 
 ## 🎯 本周代码脉搏
-![Stats](https://github-readme-stats-sigma-five.vercel.app/api?username=junior6666&show_icons=true&theme=radical&hide_border=true&include_all_commits=true)
+![Stats](https://github-readme-stats-sigma-five.vercel.app/api?username=JingW-ui&show_icons=true&theme=radical&hide_border=true&include_all_commits=true)
 
 ## 🎓 教育背景
 | 时间 | 学校 | 专业 | 排名 |
@@ -34,8 +34,8 @@
 | **脑部 MRI 海马自动分割** | `nnU-Net` `3D Slicer` | 全国一等奖 | 独立开发 |
 | **C 语言在线考试系统** | `Spring Boot` `Vue` `MySQL` | 校级项目，已上线教学使用 | 后端主程 |
 
-&gt; 更多代码 & 模型已开源至 ➡️ [个人仓库](https://github.com/junior6666)
-&gt;个人简历详情 ➡️ [个人简历](https://junior6666.github.io/junior6666/)
+&gt; 更多代码 & 模型已开源至 ➡️ [个人仓库](https://github.com/JingW-ui)
+&gt;个人简历详情 ➡️ [个人简历](https://JingW-ui.github.io/JingW-ui/)
 
 ---
 
@@ -64,7 +64,8 @@
 ---
 
 ### 📊 本周 Coding 状态
-![GitHub Streak](https://streak-stats.demolab.com/?user=junior6666&theme=radical&hide_border=true)
+![Stats](https://github-readme-stats-sigma-five.vercel.app/api?username=JingW-ui&show_icons=true&theme=radical&hide_border=true&include_all_commits=true)
+
 
 &gt; **“保持好奇，保持谦逊，保持代码整洁。”**  
 &gt; —— 王京 ⛅
