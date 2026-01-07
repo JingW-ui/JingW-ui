@@ -232,6 +232,44 @@
             background: #555;
             border-color: #555;
         }
+        /* overlay for image enlarge */
+        .overlay {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.8);
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+        }
+
+        .overlay.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .overlay img {
+            max-width: 94vw;
+            max-height: 92vh;
+            object-fit: contain;
+            border-radius: 6px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+        }
+
+        /* mobile adjustments: larger carousel area */
+        @media (max-width: 768px) {
+            .carousel-content {
+                padding-bottom: 85%;
+            }
+
+            .carousel-item {
+                width: 92%;
+                height: 92%;
+            }
+        }
             .title {
                 font-size: 22px;
                 margin-bottom: 16px;
@@ -355,6 +393,64 @@
             createTabButtons();
             loadCategory('patents_and_software');
             startAutoplay();
+
+            // 添加覆盖层（用于放大图片）
+            const overlay = document.createElement('div');
+            overlay.className = 'overlay';
+            overlay.id = 'imageOverlay';
+            overlay.innerHTML = '<img id="overlayImg" src="" alt="enlarged">';
+            overlay.addEventListener('click', closeOverlay);
+            document.body.appendChild(overlay);
+            // 点击图片本身不关闭覆盖层
+            const overlayImgEl = document.getElementById('overlayImg');
+            if (overlayImgEl) overlayImgEl.addEventListener('click', (ev) => ev.stopPropagation());
+
+            // 鼠标滚轮切换 (节流)
+            const wheelHandler = throttle((e) => {
+                if (Math.abs(e.deltaY) < 5) return;
+                if (e.deltaY > 0) {
+                    nextImage();
+                } else {
+                    previousImage();
+                }
+            }, 600);
+            // 使用 passive:false 以便在需要时阻止默认滚动
+            window.addEventListener('wheel', (e) => {
+                // 如果 overlay 打开则不切换
+                if (document.getElementById('imageOverlay').classList.contains('show')) return;
+                wheelHandler(e);
+            }, { passive: true });
+
+            // 点击或触摸放大 - 事件代理到 carouselInner
+            const carouselInner = document.getElementById('carouselInner');
+            carouselInner.addEventListener('click', (e) => {
+                const img = e.target && e.target.tagName === 'IMG' ? e.target : null;
+                if (!img) return;
+                openOverlay(img.src);
+            });
+
+            // 移动端：短触触发放大（避免与滑动冲突）
+            let touchStartPos = null;
+            let touchStartTime = 0;
+            carouselInner.addEventListener('touchstart', (e) => {
+                if (e.touches && e.touches[0]) {
+                    touchStartPos = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+                    touchStartTime = Date.now();
+                }
+            }, { passive: true });
+            carouselInner.addEventListener('touchend', (e) => {
+                const touch = (e.changedTouches && e.changedTouches[0]) || null;
+                if (!touch || !touchStartPos) return;
+                const dx = Math.abs(touch.clientX - touchStartPos.x);
+                const dy = Math.abs(touch.clientY - touchStartPos.y);
+                const dt = Date.now() - touchStartTime;
+                // 认为是点击的条件：短时间且移动距离小
+                if (dt < 300 && dx < 10 && dy < 10) {
+                    const el = document.elementFromPoint(touch.clientX, touch.clientY);
+                    if (el && el.tagName === 'IMG') openOverlay(el.src);
+                }
+                touchStartPos = null;
+            }, { passive: true });
         }
 
         // 创建分类标签按钮
@@ -395,13 +491,13 @@
             
             category.images.forEach((image, index) => {
                 const item = document.createElement('div');
-                item.className = `carousel-item ${index === 0 ? 'active' : ''}`;
+                item.className = 'carousel-item';
                 item.innerHTML = `<img src="${image}" alt="Image ${index + 1}" onerror="handleImageError(this)">`;
                 carouselInner.appendChild(item);
             });
             
-            updateDots();
-            updateInfo();
+            currentIndex = 0;
+            updateCarousel();
         }
 
         // 显示下一张
@@ -420,15 +516,34 @@
             resetAutoplay();
         }
 
-        // 更新轮播
+        // 更新轮播（支持左右、前后项堆叠显示）
         function updateCarousel() {
-            const items = document.querySelectorAll('.carousel-item');
-            items.forEach((item, index) => {
-                item.classList.remove('active');
-                if (index === currentIndex) {
-                    item.classList.add('active');
-                }
+            const items = Array.from(document.querySelectorAll('.carousel-item'));
+            const total = items.length;
+
+            items.forEach((item, idx) => {
+                item.classList.remove('active', 'prev', 'next');
+                item.style.opacity = '';
+                item.style.zIndex = '';
             });
+
+            if (total === 0) return;
+
+            const active = items[currentIndex];
+            const prevIndex = (currentIndex - 1 + total) % total;
+            const nextIndex = (currentIndex + 1) % total;
+
+            items[prevIndex].classList.add('prev');
+            items[nextIndex].classList.add('next');
+            active.classList.add('active');
+
+            // 确保层级： active > prev/next > others
+            items.forEach((it, i) => {
+                if (i === currentIndex) it.style.zIndex = 10;
+                else if (i === prevIndex || i === nextIndex) it.style.zIndex = 5;
+                else it.style.zIndex = 1;
+            });
+
             updateDots();
             updateInfo();
         }
@@ -438,7 +553,7 @@
             const images = categories[currentCategory].images;
             const dotsContainer = document.getElementById('dotsContainer');
             dotsContainer.innerHTML = '';
-            
+
             images.forEach((_, index) => {
                 const dot = document.createElement('span');
                 dot.className = `dot ${index === currentIndex ? 'active' : ''}`;
@@ -469,6 +584,45 @@
         function resetAutoplay() {
             clearInterval(autoplayTimer);
             startAutoplay();
+        }
+
+        // 简单节流器
+        function throttle(fn, wait) {
+            let last = 0;
+            return function(...args) {
+                const now = Date.now();
+                if (now - last >= wait) {
+                    last = now;
+                    fn.apply(this, args);
+                }
+            };
+        }
+
+        // 打开覆盖层放大图片
+        function openOverlay(src) {
+            const overlay = document.getElementById('imageOverlay');
+            if (!overlay) return;
+            const img = document.getElementById('overlayImg');
+            img.src = src;
+            overlay.classList.add('show');
+            // 当覆盖层打开时暂停自动播放
+            clearInterval(autoplayTimer);
+            // 监听键盘 ESC 关闭
+            document.addEventListener('keydown', escCloseHandler);
+        }
+
+        function escCloseHandler(e) {
+            if (e.key === 'Escape') closeOverlay();
+        }
+
+        // 关闭覆盖层
+        function closeOverlay() {
+            const overlay = document.getElementById('imageOverlay');
+            if (!overlay) return;
+            overlay.classList.remove('show');
+            // 恢复自动播放
+            resetAutoplay();
+            document.removeEventListener('keydown', escCloseHandler);
         }
 
         // 处理图片加载错误
