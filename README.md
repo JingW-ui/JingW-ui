@@ -16,9 +16,7 @@
 - [💻 GitHub](https://github.com/JingW-ui) - 开源代码仓库
 
 ---
-## 🎯 本周代码脉搏
-![Stats](https://github-readme-stats-sigma-five.vercel.app/api?username=JingW-ui&show_icons=true&theme=radical&hide_border=true&include_all_commits=true)
----
+
 ## 🎓 教育背景
 
 | 时间 | 学校 | 专业 | 成绩 |
